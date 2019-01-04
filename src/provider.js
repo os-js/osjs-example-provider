@@ -28,13 +28,22 @@
  * @licence Simplified BSD License
  */
 
-class InstanceExample {}
-class SingletonExample {}
+class InstanceExample {
+  greet() {
+    return 'Instance Example';
+  }
+}
+
+class SingletonExample {
+  greet() {
+    return 'Singleton Example';
+  }
+}
 
 /**
  * Example OS.js Service Provider
  */
-export default class ExampleServiceProvider extends ServiceProvider {
+export default class ExampleServiceProvider {
 
   constructor(core, options = {}) {
     this.core = core;
@@ -43,11 +52,23 @@ export default class ExampleServiceProvider extends ServiceProvider {
 
   /* The list of registered services */
   provides() {
-    return [];
+    return [
+      'example/singleton',
+      'example/instance'
+    ];
   }
 
   /* Initialize your services */
-  async init() {}
+  async init() {
+    this.core.singleton('example/singleton', () => new SingletonExample());
+    this.core.instance('example/instance', () => new InstanceExample());
+
+    /*
+    Example usage:
+    core.make('example/singleton')
+    core.make('example/instance')
+    */
+  }
 
   /* Start your services */
   start() {}
