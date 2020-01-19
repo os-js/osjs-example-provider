@@ -24,7 +24,7 @@
     "type": "provider"
   },
   "devDependencies": {
-    "@osjs/eslint-config": "^1.0.0",
-    "eslint": "^5.16.0"
+    "@osjs/eslint-config": "^1.0.2",
+    "eslint": "^6.8.0"
   }
 }
