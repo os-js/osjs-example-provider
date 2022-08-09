@@ -48,7 +48,7 @@ Then you can use `core.make('example/instance')` or `core.make('example/singleto
 
 ## Documentation
 
-See the [Official Manuals](https://manual.os-js.org/v3/) for articles, tutorials and guides.
+See the [Official Manuals](https://manual.os-js.org/) for articles, tutorials and guides.
 
 ## Links
 
